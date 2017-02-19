@@ -5,4 +5,16 @@
     <string name="female">Femenino</string>
     <string name="male">Masculino</string>
     <string name="name_label">Nombres</string>
+    <string name="labelRadioSex">Sexo:</string>
+    <string name="birthDayTV">Fecha de nacimiento:</string>
+    <string name="labelChange">Cambiar</string>
+    <string name="next_label">Siguiente</string>
+    <string-array name="scholar_grade">
+        <item>Seleccionar grado</item>
+        <item>Primaria</item>
+        <item>Secundaria</item>
+        <item>Universitaria</item>
+        <item>Otros</item>
+    </string-array>
+
 </resources>
