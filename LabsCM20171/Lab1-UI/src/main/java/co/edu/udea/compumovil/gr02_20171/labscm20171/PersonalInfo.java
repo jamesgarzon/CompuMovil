@@ -2,6 +2,7 @@ package co.edu.udea.compumovil.gr02_20171.labscm20171;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.SyncStatusObserver;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +29,8 @@ public class PersonalInfo extends AppCompatActivity {
     RadioButton sexRadioFemale;
     Button nextButton;
     Spinner spinner;
+    static Date birthday;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,20 +57,17 @@ public class PersonalInfo extends AppCompatActivity {
 
                 person.setName(nameTv.getText().toString());
                 person.setLastName(lastNameTv.getText().toString());
-                person.setBirthday(new Date());
+                person.setBirthday(birthday);
                 person.setScholarityGrade(spinner.getSelectedItem().toString());
 
-                System.out.println("MOTHERFUCKER");
-                Log.d("APP", person.getName() );
-                Log.d("APP", person.getLastName());
-                Log.d("APP", person.getSex());
-                Log.d("APP", person.getScholarityGrade());
-                Log.d("APP", person.getBirthday().toString());
+                Intent intent = new Intent(PersonalInfo.this, ContactInfo.class);
+
+                intent.putExtra("MyClass", person);
+
+                startActivity(intent);
 
             }
         });
-
-
 
     }
 
@@ -92,7 +92,7 @@ public class PersonalInfo extends AppCompatActivity {
 
         @Override
         public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-
+            birthday = new Date(i,i1,i2);
         }
 
     }

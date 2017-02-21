@@ -1,12 +1,13 @@
 package co.edu.udea.compumovil.gr02_20171.labscm20171;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by james on 2/21/17.
  */
 
-public class Person {
+public class Person implements Serializable{
 
     private String name;
     private String lastName;
