@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Información Complementaria"
+            android:text="@string/otherInfoTitle"
             android:layout_marginBottom="14dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
 
@@ -34,8 +34,8 @@
             android:layout_height="wrap_content">
 
             <CheckBox
-                android:text="Leer"
-                android:layout_width="wrap_content"
+                android:text="@string/read"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/checkBoxRead"
                 android:layout_weight="1"/>
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content">
 
             <CheckBox
-                android:text="Ver TV"
+                android:text="@string/watchTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/checkBoxWatchTV"
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content">
 
             <CheckBox
-                android:text="Bailar"
+                android:text="@string/Dance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/checkBoxDance"
@@ -95,7 +95,7 @@
             android:layout_height="wrap_content">
 
             <CheckBox
-                android:text="Cantar"
+                android:text="@string/sing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/checkBoxSing"
@@ -116,8 +116,8 @@
             android:layout_height="wrap_content">
 
             <CheckBox
-                android:text="Nadar"
-                android:layout_width="wrap_content"
+                android:text="@string/Swimming"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/checkBoxSwimming"
                 android:layout_weight="1"
@@ -140,7 +140,7 @@
             android:layout_marginTop="20dp">
 
             <Button
-                android:text="Mostrar"
+                android:text="@string/show"
                 android:layout_width="182dp"
                 android:layout_gravity="right"
                 android:layout_height="wrap_content"

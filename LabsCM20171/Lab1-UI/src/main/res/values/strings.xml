@@ -1,20 +1,27 @@
 <resources>
     <string name="app_name">LabsCM20171</string>
-    <string name="name_hint">Ingrese su nombre</string>
-    <string name="last_name_hint">Ingrese su apellido</string>
-    <string name="female">Femenino</string>
-    <string name="male">Masculino</string>
-    <string name="name_label">Nombres</string>
-    <string name="labelRadioSex">Sexo:</string>
-    <string name="birthDayTV">Fecha de nacimiento:</string>
-    <string name="labelChange">Cambiar</string>
-    <string name="next_label">Siguiente</string>
+    <string name="name_hint">Enter your name</string>
+    <string name="last_name_hint">Enter your lastname</string>
+    <string name="female">Woman</string>
+    <string name="male">Man</string>
+    <string name="name_label">Names</string>
+    <string name="labelRadioSex">Sex:</string>
+    <string name="birthDayTV">birthday:</string>
+    <string name="labelChange">Change</string>
+    <string name="next_label">Next</string>
+    <string name="otherInfoTitle">Other info</string>
+    <string name="read">Read</string>
+    <string name="watchTv">Watch TV</string>
+    <string name="Dance">Dance</string>
+    <string name="sing">Sing</string>
+    <string name="Swimming">Swimming</string>
+    <string name="show">Show</string>
     <string-array name="scholar_grade">
-        <item>Seleccionar grado</item>
-        <item>Primaria</item>
-        <item>Secundaria</item>
-        <item>Universitaria</item>
-        <item>Otros</item>
+        <item>Scholarity grade</item>
+        <item>Primary</item>
+        <item>High School</item>
+        <item>University</item>
+        <item>others</item>
     </string-array>
     <string-array name="countries">
         <item>Argentina</item>
@@ -39,22 +46,22 @@
         <item>Medellín</item>
         <item>Cali</item>
         <item>Barranquilla</item>
-        <!--<item>Cartagena de Indias</item>-->
-        <!--<item>Soledad (Atlántico)</item>-->
-        <!--<item>Cúcuta</item>-->
-        <!--<item>Ibagué</item>-->
-        <!--<item>Soacha</item>-->
-        <!--<item>Bucaramanga</item>-->
-        <!--<item>Santa Marta (Colombia)</item>-->
-        <!--<item>Villavicencio</item>-->
-        <!--<item>Bello (Antioquia)</item>-->
-        <!--<item>Valledupar</item>-->
-        <!--<item>Pereira</item>-->
-        <!--<item>Buenaventura (Valle del Cauca)</item>-->
-        <!--<item>San Juan de Pasto</item>-->
-        <!--<item>Manizales</item>-->
-        <!--<item>Montería</item>-->
-        <!--<item>Neiva</item>-->
+        <item>Cartagena de Indias</item>
+        <item>Soledad (Atlántico)</item>
+        <item>Cúcuta</item>
+        <item>Ibagué</item>
+        <item>Soacha</item>
+        <item>Bucaramanga</item>
+        <item>Santa Marta (Colombia)</item>
+        <item>Villavicencio</item>
+        <item>Bello (Antioquia)</item>
+        <item>Valledupar</item>
+        <item>Pereira</item>
+        <item>Buenaventura (Valle del Cauca)</item>
+        <item>San Juan de Pasto</item>
+        <item>Manizales</item>
+        <item>Montería</item>
+        <item>Neiva</item>
     </string-array>
 
 </resources>
