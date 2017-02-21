@@ -21,13 +21,6 @@
         android:layout_alignParentStart="true"
         >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/otherInfoTitle"
-            android:layout_marginBottom="14dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"/>
-
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -63,7 +56,7 @@
             <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/ratingBarReadWatchTV"
+                android:id="@+id/ratingWatchTV"
                 style="@style/Widget.AppCompat.RatingBar.Indicator"
                 android:numStars="5"/>
 
@@ -152,6 +145,28 @@
 
     </LinearLayout>
 
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="114dp"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="62dp"
+        android:id="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="77dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/showInfo"
+         />
 
 
 </RelativeLayout>
