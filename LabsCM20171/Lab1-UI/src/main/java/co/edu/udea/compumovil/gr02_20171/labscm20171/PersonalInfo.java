@@ -37,17 +37,41 @@ public class PersonalInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_info);
 
-        nameTv = (EditText) findViewById(R.id.edit_text_Name);
-        lastNameTv = (EditText) findViewById(R.id.edit_text_last_name);
-        spinner = (Spinner) findViewById(R.id.scholar_spinner);
-        sexRadioMale =(RadioButton) findViewById(R.id.radioMale);
-        sexRadioFemale =(RadioButton) findViewById(R.id.radioFemale);
-        nextButton = (Button) findViewById(R.id.next);
+//        if (savedInstanceState != null) {
+//            nameTv = (EditText) findViewById(R.id.edit_text_Name);
+//            lastNameTv = (EditText) findViewById(R.id.edit_text_last_name);
+//            spinner = (Spinner) findViewById(R.id.scholar_spinner);
+//            sexRadioMale =(RadioButton) findViewById(R.id.radioMale);
+//            sexRadioFemale =(RadioButton) findViewById(R.id.radioFemale);
+//            nextButton = (Button) findViewById(R.id.next);
+//
+//            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.scholar_grade, android.R.layout.simple_spinner_item);
+//            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//            spinner.setAdapter(adapter);
+//
+//            nameTv.setText(savedInstanceState.getString("nameTv"));
+//            lastNameTv.setText(savedInstanceState.getString("lastNameTv"));
+//            sexRadioMale.setChecked(savedInstanceState.getBoolean("sexRadioMale"));
+//            sexRadioFemale.setChecked(savedInstanceState.getBoolean("sexRadioFemale"));
+//            birthday = new Date((savedInstanceState.getLong("birthday")));
+//            spinner.setSelection(savedInstanceState.getInt("grade"));
+//
+//        }else {
+            nameTv = (EditText) findViewById(R.id.edit_text_Name);
+            lastNameTv = (EditText) findViewById(R.id.edit_text_last_name);
+            spinner = (Spinner) findViewById(R.id.scholar_spinner);
+            sexRadioMale =(RadioButton) findViewById(R.id.radioMale);
+            sexRadioFemale =(RadioButton) findViewById(R.id.radioFemale);
+            nextButton = (Button) findViewById(R.id.next);
 
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.scholar_grade, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.scholar_grade, android.R.layout.simple_spinner_item);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinner.setAdapter(adapter);
+//        }
+
+
+
 
 
 
@@ -115,6 +139,25 @@ public class PersonalInfo extends AppCompatActivity {
         }
 
     }
+
+//    @Override
+//    public void onSaveInstanceState(Bundle savedInstanceState) {
+//        super.onSaveInstanceState(savedInstanceState);
+//        // Save UI state changes to the savedInstanceState.
+//        // This bundle will be passed to onCreate if the process is
+//        // killed and restarted.
+//        birthday = new Date();
+//        savedInstanceState.putString("nameTv",nameTv.getText().toString());
+//        savedInstanceState.putString("lastNameTv",lastNameTv.getText().toString());
+//        savedInstanceState.putBoolean("sexRadioMale",sexRadioMale.isChecked());
+//        savedInstanceState.putBoolean("sexRadioFemale",sexRadioFemale.isChecked());
+//        savedInstanceState.putLong("birthday", birthday.getTime());
+//        savedInstanceState.putInt("grade",spinner.getSelectedItemPosition() );
+//        // etc.
+//    }
+
+
+
 
 
 

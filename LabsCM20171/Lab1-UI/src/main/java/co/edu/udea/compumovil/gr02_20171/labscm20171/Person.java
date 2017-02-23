@@ -19,9 +19,20 @@ public class Person implements Serializable{
     private String country;
     private String city;
     private String address;
+    private String hobbies;
 
     public Person() {
-
+        this.name = "";
+        this.lastName = "";
+        this.birthday = new Date();
+        this.sex = "";
+        this.scholarityGrade = "";
+        this.phone = "";
+        this.email = "";
+        this.country = "";
+        this.city = "";
+        this.address = "";
+        this.hobbies = "";
     }
 
     public String getName() {
@@ -102,5 +113,13 @@ public class Person implements Serializable{
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(String hobbies) {
+        this.hobbies = hobbies;
     }
 }

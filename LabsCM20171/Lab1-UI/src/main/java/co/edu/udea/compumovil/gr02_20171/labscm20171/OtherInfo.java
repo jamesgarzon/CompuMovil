@@ -33,14 +33,14 @@ public class OtherInfo extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_other_info)
+        setContentView(R.layout.activity_other_info);
 
         Intent i = getIntent();
         person = (Person) i.getSerializableExtra("MyClass");
 
 
         txtShowInfo = (TextView) findViewById(R.id.showInfo);
-        btnShow = (Button) findViewById(R.id.button3);
+        btnShow = (Button) findViewById(R.id.displayInfo);
 
 
 
@@ -88,6 +88,13 @@ public class OtherInfo extends AppCompatActivity implements View.OnClickListener
                 String datos = getIntent().getExtras().getString("datos");
                 text = datos + text;
                 txtShowInfo.setText(text);
+
+                Intent intent = new Intent(OtherInfo.this, ShowInfo.class);
+
+                intent.putExtra("MyClass", person);
+
+                startActivity(intent);
+
             }
         });
 

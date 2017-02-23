@@ -17,8 +17,6 @@ public class ContactInfo extends AppCompatActivity {
     private AutoCompleteTextView autoCompleteCities;
     private EditText phoneEditText;
     private EditText emailEditText;
-    private String selectedCountry;
-    private String selectedCities;
     private Button nextContacInfo;
     private Person person = null;
     private EditText addressEditText;
@@ -27,11 +25,11 @@ public class ContactInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_info);
+        Log.d("MYAPP", "ContactInfo");
 
         Intent i = getIntent();
         person = (Person) i.getSerializableExtra("MyClass");
 
-        person.setCountry("Colombia");
         autoCompleteCountries = (AutoCompleteTextView) findViewById(R.id.autoCompleteCountry);
         autoCompleteCities = (AutoCompleteTextView) findViewById(R.id.autoCompleteCities);
         phoneEditText = (EditText) findViewById(R.id.editText);
@@ -45,36 +43,14 @@ public class ContactInfo extends AppCompatActivity {
                 person.setPhone(phoneEditText.getText().toString());
                 person.setEmail(emailEditText.getText().toString());
                 person.setAddress(addressEditText.getText().toString());
+                person.setCountry(autoCompleteCountries.getText().toString());
+                person.setCity(autoCompleteCities.getText().toString());
 
                 Intent intent = new Intent(ContactInfo.this, OtherInfo.class);
 
                 intent.putExtra("MyClass", person);
 
                 startActivity(intent);
-            }
-        });
-
-        autoCompleteCountries.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                person.setCountry(adapterView.getItemAtPosition(i).toString());
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        autoCompleteCities.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                person.setCity(adapterView.getItemAtPosition(i).toString());
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
 
