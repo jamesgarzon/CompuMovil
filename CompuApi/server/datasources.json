@@ -1,0 +1,12 @@
+{
+  "MongoDb": {
+    "host": "ds149040.mlab.com",
+    "port": 49040,
+    "url": "mongodb://admin:admin@ds149040.mlab.com:49040/compumovil",
+    "database": "compumovil",
+    "password": "admin",
+    "name": "MongoDb",
+    "user": "admin",
+    "connector": "mongodb"
+  }
+}
