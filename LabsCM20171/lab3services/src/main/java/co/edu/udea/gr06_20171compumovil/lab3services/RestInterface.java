@@ -12,8 +12,8 @@ import retrofit.http.Query;
 
 public interface RestInterface {
 
-    @GET("/users/{user}")
-    void getUser(@Path("user") String user, Callback<User> cb);
+    @GET("/users")
+    void getUser( Callback<User[]> cb);
 }
 
 

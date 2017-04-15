@@ -25,4 +25,6 @@
     <string name="profile">Profile</string>
     <string name="events">events</string>
     <string name="refresh">refresh</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
 </resources>
