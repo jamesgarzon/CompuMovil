@@ -29,7 +29,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".RegisterActivity" android:theme="@style/AppTheme.Dark"></activity>
+        <activity android:name=".SignupActivity" android:theme="@style/AppTheme.Dark"></activity>
     </application>
 
 </manifest>
@@ -64,7 +64,7 @@
     <!--<activity-->
         <!--android:name=".LoginActivity"-->
         <!--android:label="@string/title_activity_login" />-->
-    <!--<activity android:name=".RegisterActivity"></activity>-->
+    <!--<activity android:name=".SignupActivity"></activity>-->
 <!--</application>-->
 
 <!--</manifest>-->

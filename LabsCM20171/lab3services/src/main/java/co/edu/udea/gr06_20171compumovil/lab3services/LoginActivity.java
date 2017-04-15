@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -48,10 +49,11 @@ import static android.Manifest.permission.READ_CONTACTS;
  */
 public class LoginActivity extends AppCompatActivity {
 
-    public String url = "http://192.168.1.9:3000/api";
+    public String url = "https://stormy-oasis-88226.herokuapp.com/api";
     public EditText mUsernameET;
     public EditText mPasswordET;
     public Button mLoginButton;
+    public Button mSignupButton;
     public TextView mLoginInfoTV;
     public User[] users;
 
@@ -65,6 +67,8 @@ public class LoginActivity extends AppCompatActivity {
         mPasswordET = (EditText) findViewById(R.id.input_password);
         mLoginInfoTV = (TextView) findViewById(R.id.login_info_text_view);
         mLoginButton = (Button) findViewById(R.id.btn_login);
+        mSignupButton = (Button) findViewById(R.id.btn_signup);
+        Intent intent;
 
 
 
@@ -90,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     @Override
                     public void success(User[] usersResponse, Response response) {
-//                        Log.d("REST", usersResponse[1].getUsername());
+                        Log.d("REST", "URL: "+ response.getUrl());
                         // Check if no view has focus:
 
                         users = usersResponse;
@@ -110,6 +114,14 @@ public class LoginActivity extends AppCompatActivity {
                         Log.d("REST", "Error: " + error.toString());
                     }
                 });
+            }
+        });
+
+        mSignupButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+                startActivity(intent);
             }
         });
     }
