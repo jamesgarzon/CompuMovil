@@ -5,9 +5,11 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.SharedPreferencesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
 
@@ -56,6 +58,10 @@ public class LoginActivity extends AppCompatActivity {
     public Button mSignupButton;
     public TextView mLoginInfoTV;
     public User[] users;
+    public static final String USER_PREFERNCES = "UserPreferences";
+
+    SharedPreferences settings;
+    SharedPreferences.Editor prefEditor;
 
 
     @Override
@@ -102,6 +108,9 @@ public class LoginActivity extends AppCompatActivity {
                         if (user != null) {
                            Log.d("REST", "Success - Usuario: " + user.toString());
                             mLoginInfoTV.setText("Login successful");
+                            saveUserPreferences(user);
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(intent);
 
                         }else {
                             mLoginInfoTV.setText("Cannot authenticate with data provided, please try again");
@@ -144,6 +153,18 @@ public class LoginActivity extends AppCompatActivity {
             view = new View(activity);
         }
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+    public void saveUserPreferences(User user){
+        settings = getSharedPreferences(USER_PREFERNCES, MODE_PRIVATE);
+        prefEditor = settings.edit();
+
+        prefEditor.putString("username", user.getUsername());
+        prefEditor.putString("email", user.getEmail());
+        prefEditor.putString("id", user.getId());
+        prefEditor.putString("picture", user.getPicture());
+        prefEditor.putInt("age", user.getAge());
+        prefEditor.commit();
     }
 
 }

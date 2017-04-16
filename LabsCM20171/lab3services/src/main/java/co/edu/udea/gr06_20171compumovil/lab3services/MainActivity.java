@@ -1,8 +1,12 @@
 package co.edu.udea.gr06_20171compumovil.lab3services;
 
+import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,16 +16,52 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+import com.squareup.picasso.Picasso;
+
+import co.edu.udea.gr06_20171compumovil.lab3services.Pojos.User;
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    public static final String USER_PREFERNCES = "UserPreferences";
+    User user;
+
+    TextView mUsernameHeaderTV;
+    TextView mEmailHeaderTV;
+    ImageView mPictureHeaderImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        setSupportActionBar(toolbar);
+
+
+        NavigationView mnavigationView = (NavigationView) findViewById(R.id.nav_view);
+        View hView =  mnavigationView.getHeaderView(0);
+
+        mUsernameHeaderTV = (TextView) hView.findViewById(R.id.username_header);
+        mEmailHeaderTV = (TextView) hView.findViewById(R.id.email_header);
+        mPictureHeaderImage = (ImageView) hView.findViewById(R.id.profile_image_header);
+
+        SharedPreferences UserPreferences = getSharedPreferences(USER_PREFERNCES, MODE_PRIVATE);
+
+        user = new User();
+        user.setUsername(UserPreferences.getString("username", null));
+        user.setEmail(UserPreferences.getString("email", null));
+        user.setId(UserPreferences.getString("id", null));
+        user.setAge(UserPreferences.getInt("age", 0));
+        user.setPicture(UserPreferences.getString("picture", null));
+
+        Log.d("REST SERVICE WORK", "username: "+ user.getUsername());
+
+        mUsernameHeaderTV.setText(user.getUsername());
+        mEmailHeaderTV.setText(user.getEmail());
+        Picasso.with(getApplicationContext()).load(user.getPicture()).resize(170, 170).into(mPictureHeaderImage);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +71,7 @@ public class MainActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+        
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -56,23 +97,24 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle action bar item clicks here. The action bar will
+//        // automatically handle clicks on the Home/Up button, so long
+//        // as you specify a parent activity in AndroidManifest.xml.
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
