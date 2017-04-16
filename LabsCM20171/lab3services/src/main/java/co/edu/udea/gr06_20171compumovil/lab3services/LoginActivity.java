@@ -69,6 +69,13 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        SharedPreferences UserPreferences = getSharedPreferences(USER_PREFERNCES, MODE_PRIVATE);
+        if (UserPreferences.contains("username")){
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
         mUsernameET = (EditText) findViewById(R.id.input_username);
         mPasswordET = (EditText) findViewById(R.id.input_password);
         mLoginInfoTV = (TextView) findViewById(R.id.login_info_text_view);

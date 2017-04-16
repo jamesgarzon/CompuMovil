@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mPictureHeaderImage = (ImageView) hView.findViewById(R.id.profile_image_header);
 
         SharedPreferences UserPreferences = getSharedPreferences(USER_PREFERNCES, MODE_PRIVATE);
+//        UserPreferences.edit().clear().commit();
 
         user = new User();
         user.setUsername(UserPreferences.getString("username", null));
@@ -65,13 +66,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
+            SharedPreferences UserPreferences = getSharedPreferences(USER_PREFERNCES, MODE_PRIVATE);
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                UserPreferences.edit().clear().commit();
             }
         });
-        
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
