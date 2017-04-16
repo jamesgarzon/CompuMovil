@@ -1,5 +1,6 @@
 package co.edu.udea.gr06_20171compumovil.lab3services;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
@@ -66,12 +67,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
-            SharedPreferences UserPreferences = getSharedPreferences(USER_PREFERNCES, MODE_PRIVATE);
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                UserPreferences.edit().clear().commit();
+
             }
         });
 
@@ -129,6 +129,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             // Handle the camera action
         } else if (id == R.id.nav_events) {
 
+        } else if (id == R.id.nav_logout){
+            SharedPreferences UserPreferences = getSharedPreferences(USER_PREFERNCES, MODE_PRIVATE);
+            UserPreferences.edit().clear().commit();
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(intent);
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
