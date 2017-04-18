@@ -1,5 +1,6 @@
 package co.edu.udea.compumovil.gr02_20171.labscm20171;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,14 +28,24 @@ public class OtherInfo extends AppCompatActivity implements View.OnClickListener
     RatingBar rtSing;
     RatingBar rtSwimming;
     String ratedValue;
+    Person person;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_other_info);
 
+<<<<<<< HEAD
         txtShowInfo = (TextView) findViewById(R.id.showInfo);
         btnShow = (Button) findViewById(R.id.button3);
+=======
+        Intent i = getIntent();
+        person = (Person) i.getSerializableExtra("MyClass");
+
+
+        txtShowInfo = (TextView) findViewById(R.id.showInfo);
+        btnShow = (Button) findViewById(R.id.displayInfo);
+>>>>>>> thirdLaboratoty
 
 
 
@@ -51,6 +62,7 @@ public class OtherInfo extends AppCompatActivity implements View.OnClickListener
         chDance = (CheckBox) findViewById(R.id.checkBoxDance);
         chSing = (CheckBox) findViewById(R.id.checkBoxSing);
         chSwimming = (CheckBox) findViewById(R.id.checkBoxSwimming);
+<<<<<<< HEAD
 
         chRead.setOnClickListener(this);
         chWTV.setOnClickListener(this);
@@ -79,6 +91,46 @@ public class OtherInfo extends AppCompatActivity implements View.OnClickListener
                     text = text + chSwimming.getText()+": " + rtSwimming.getRating() + " Estrellas \n";
                 }
                 txtShowInfo.setText(text);
+=======
+
+        chRead.setOnClickListener(this);
+        chWTV.setOnClickListener(this);
+        chDance.setOnClickListener(this);
+        chSing.setOnClickListener(this);
+        chSwimming.setOnClickListener(this);
+
+        btnShow.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+
+                String text;
+                text = "";
+                if(chRead.isChecked()){
+                    text = text + chRead.getText()+": " + rtRead.getRating() + " Estrellas \n";
+                }
+                if(chWTV.isChecked()){
+                    text = text + chWTV.getText()+": " + rtWTV.getRating() + " Estrellas \n";
+                }
+                if(chDance.isChecked()){
+                    text = text + chDance.getText()+": " + rtDance.getRating() + " Estrellas \n";
+                }
+                if(chSing.isChecked()){
+                    text = text + chSing.getText()+": " + rtSing.getRating() + " Estrellas \n";
+                }
+                if(chSwimming.isChecked()){
+                    text = text + chSwimming.getText()+": " + rtSwimming.getRating() + " Estrellas \n";
+                }
+
+                String datos = getIntent().getExtras().getString("datos");
+                text = datos + text;
+                txtShowInfo.setText(text);
+
+                Intent intent = new Intent(OtherInfo.this, ShowInfo.class);
+
+                intent.putExtra("MyClass", person);
+
+                startActivity(intent);
+
+>>>>>>> thirdLaboratoty
             }
         });
 

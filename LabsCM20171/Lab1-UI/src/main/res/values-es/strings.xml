@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LabsCM20171</string>
+    <string name="name_hint">Ingrese su nombre</string>
+    <string name="last_name_hint">Ingrese su apellido</string>
+    <string name="female">Femenino</string>
+    <string name="male">Masculino</string>
+    <string name="name_label">Nombres</string>
+    <string name="labelRadioSex">Sexo:</string>
+    <string name="birthDayTV">Fecha de nacimiento:</string>
+    <string name="labelChange">Cambiar</string>
+    <string name="next_label">Siguiente</string>
+    <string name="otherInfoTitle">Información Complementaria</string>
+    <string name="read">Leer</string>
+    <string name="watchTv">Ver TV</string>
+    <string name="Dance">Bailar</string>
+    <string name="sing">Cantar</string>
+    <string name="Swimming">Nadar</string>
+    <string name="show">Mostrar</string>
+    <string-array name="scholar_grade">
+        <item>Seleccionar grado</item>
+        <item>Primaria</item>
+        <item>Secundaria</item>
+        <item>Universitaria</item>
+        <item>Otros</item>
+    </string-array>
+    <string-array name="countries">
+        <item>Argentina</item>
+        <item>Bolivia</item>
+        <item>Bouvet Island</item>
+        <item>Brazil</item>
+        <item>Chile</item>
+        <item>Colombia</item>
+        <item>Ecuador</item>
+        <item>Falkland Islands (Islas Malvinas)</item>
+        <item>French Guiana</item>
+        <item>Guyana</item>
+        <item>Paraguay</item>
+        <item>Peru</item>
+        <item>South Georgia South Sandwich Islands</item>
+        <item>Suriname</item>
+        <item>Uruguay</item>
+        <item>Venezuela</item>
+    </string-array>
+    <string-array name="mainCitiesColombia">
+        <item>Bogotá</item>
+        <item>Medellín</item>
+        <item>Cali</item>
+        <item>Barranquilla</item>
+        <item>Cartagena de Indias</item>
+        <item>Soledad (Atlántico)</item>
+        <item>Cúcuta</item>
+        <item>Ibagué</item>
+        <item>Soacha</item>
+        <item>Bucaramanga</item>
+        <item>Santa Marta (Colombia)</item>
+        <item>Villavicencio</item>
+        <item>Bello (Antioquia)</item>
+        <item>Valledupar</item>
+        <item>Pereira</item>
+        <item>Buenaventura (Valle del Cauca)</item>
+        <item>San Juan de Pasto</item>
+        <item>Manizales</item>
+        <item>Montería</item>
+        <item>Neiva</item>
+    </string-array>
+
+</resources>

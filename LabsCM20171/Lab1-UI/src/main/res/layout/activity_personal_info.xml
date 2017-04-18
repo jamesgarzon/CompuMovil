@@ -31,6 +31,7 @@
         android:layout_marginEnd="40dp"
         android:hint="@string/name_hint"
         android:drawableLeft="@drawable/ic_face_black_24dp"
+        android:drawableStart="@drawable/ic_face_black_24dp"
         android:drawableTint="@android:color/darker_gray"
         android:drawablePadding="@dimen/activity_horizontal_margin"
         />
@@ -68,13 +69,16 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
-            <RadioButton android:id="@+id/male"
+            <RadioButton android:id="@+id/radioMale"
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
-                         android:text="@string/male"/>
-            <RadioButton android:id="@+id/female"
+                         android:onClick="onSexCheckBoxClicked"
+                         android:text="@string/male"
+                />
+            <RadioButton android:id="@+id/radioFemale"
                          android:layout_width="wrap_content"
                          android:layout_height="wrap_content"
+                         android:onClick="onSexCheckBoxClicked"
                          android:text="@string/female"/>
         </RadioGroup>
 
@@ -97,6 +101,7 @@
             android:drawablePadding="@dimen/activity_horizontal_margin"
             />
         <Button
+            android:id="@+id/birthdayButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/labelChange"
@@ -141,7 +146,7 @@
         android:gravity="end">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:foregroundGravity="right"
