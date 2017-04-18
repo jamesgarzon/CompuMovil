@@ -5,7 +5,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import co.edu.udea.gr06_20171compumovil.lab3services.Pojos.Event;
 import co.edu.udea.gr06_20171compumovil.lab3services.eventsFragment.OnListFragmentInteractionListener;
@@ -40,8 +43,10 @@ public class MyeventRecyclerViewAdapter extends RecyclerView.Adapter<MyeventRecy
     public void onBindViewHolder(final ViewHolder holder, int position) {
 
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).getId());
-//        holder.mContentView.setText(mValues.get(position).content);
+        holder.mNameView.setText(mValues.get(position).getName());
+        holder.mDescriptionView.setText(mValues.get(position).getDescription());
+        Picasso.with(holder.mEventImageView.getContext()).load(mValues.get(position).getPicture()).resize(170, 170).into(holder.mEventImageView);
+
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,20 +67,23 @@ public class MyeventRecyclerViewAdapter extends RecyclerView.Adapter<MyeventRecy
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
+        public final TextView mNameView;
+        public final TextView mDescriptionView;
+        public final ImageView mEventImageView;
         public Event mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.id);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            mNameView = (TextView) view.findViewById(R.id.name);
+            mDescriptionView = (TextView) view.findViewById(R.id.description_view);
+            mEventImageView = (ImageView) view.findViewById(R.id.event_picture);
+
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return super.toString() + " '" + mDescriptionView.getText() + "'";
         }
     }
 }

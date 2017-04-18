@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,11 +34,13 @@ public class eventsFragment extends Fragment {
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
-    private int mColumnCount = 2;
+    private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
     public String url = "https://stormy-oasis-88226.herokuapp.com/api";
     public List<Event> events = new ArrayList<>();
     public MyeventRecyclerViewAdapter mAdapter;
+    public Button mUpdateEventsButton;
+
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
@@ -65,12 +68,21 @@ public class eventsFragment extends Fragment {
         }
 
 
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_event_list, container, false);
+
+//        mUpdateEventsButton = (Button) container.findViewById(R.id.update_events);
+//        mUpdateEventsButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                updateEvents();
+//            }
+//        });
 
         mAdapter = new MyeventRecyclerViewAdapter(events, mListener);
 
